@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advogado em Nova Iguaçu/RJ | Dr. Vagner Lúcio de Lima — OAB/RJ 256.240</title>
-  <meta name="description" content="Seu problema jurídico tem solução. Advogado em Nova Iguaçu/RJ com atendimento 100% digital para todo o Brasil. Consulta gratuita com o Dr. Vagner Lúcio de Lima — OAB/RJ 256.240.">
-  <meta name="keywords" content="advogado Nova Iguaçu, advogado Rio de Janeiro, advocacia digital, direito trabalhista, direito previdenciário, direito do consumidor, OAB RJ 256240">
+  <title>Dr. Vagner Lúcio de Lima | Advogado | OAB/RJ 256.240 | Nova Iguaçu</title>
+  <meta name="description" content="Advogado com atendimento virtual em todo o Brasil. Consumidor, Trabalhista, Previdenciário, Família, Criminal, Plano de Saúde, Administrativo e cálculos judiciais. Advocacia 4.0 com precisão técnica.">
+  <meta name="keywords" content="advogado nova iguaçu, advogado online, direito trabalhista, direito previdenciário, plano de saúde negativa, cálculos judiciais, advocacia 4.0, OAB RJ, advogado baixada fluminense">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Advogado em Nova Iguaçu/RJ | Dr. Vagner Lúcio de Lima">
-  <meta property="og:description" content="Seu problema jurídico tem solução. Atendimento 100% digital, para todo o Brasil. Consulta gratuita.">
+  <meta property="og:title" content="Dr. Vagner Lúcio de Lima | Advogado | OAB/RJ 256.240 | Nova Iguaçu">
+  <meta property="og:description" content="Advogado com atendimento virtual em todo o Brasil. Advocacia 4.0 com precisão técnica. OAB/RJ 256.240.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <link rel="canonical" href="https://drvagnerdelima.com.br">
@@ -35,9 +35,39 @@
     h1, h2, h3 { font-family: "Playfair Display", serif; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-    /* ── NAV ── */
+    /* ── SECURITY BANNER ── */
+    .security-banner {
+      background: rgba(12,26,46,0.97);
+      border-bottom: 2px solid rgba(201,169,97,0.4);
+      padding: 9px 0;
+      position: sticky;
+      top: 0;
+      z-index: 150;
+    }
+    .security-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .security-icon { font-size: 1rem; flex-shrink: 0; }
+    .security-text {
+      font-size: 0.78rem; color: var(--cream); line-height: 1.5;
+      opacity: 0.9; flex: 1;
+    }
+    .security-text strong { color: var(--accent); }
+    .security-close {
+      background: none; border: none; color: var(--muted);
+      cursor: pointer; font-size: 0.85rem; padding: 4px 8px;
+      flex-shrink: 0; transition: color 0.2s;
+    }
+    .security-close:hover { color: var(--accent); }
+    @media (max-width: 900px) {
+      .security-inner { flex-wrap: wrap; }
+      .security-text { font-size: 0.74rem; }
+    }
+
+        /* ── NAV ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: sticky; top: 0; left: 0; right: 0; z-index: 100;
       padding: 20px 0;
       background: rgba(12,26,46,0.92);
       backdrop-filter: blur(12px);
@@ -80,7 +110,7 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh; display: flex; align-items: center;
-      position: relative; overflow: hidden; padding-top: 90px;
+      position: relative; overflow: hidden;
     }
     .hero-bg {
       position: absolute; inset: 0;
@@ -106,7 +136,7 @@
     .hero-inner {
       position: relative; z-index: 2; display: flex; flex-direction: column;
       justify-content: center; width: 100%; max-width: 1100px;
-      margin: 0 auto; padding: 100px 24px 80px;
+      margin: 0 auto; padding: 120px 24px 100px;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -237,6 +267,31 @@
     /* ── ÁREAS ── */
     .areas { background: var(--bg); }
     .areas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 48px; }
+    .areas-grid-11 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    /* 11° card destaque — ocupa 2 colunas na última linha para centralizar */
+    .area-card-destaque {
+      grid-column: span 2;
+      border-color: rgba(201,169,97,0.3);
+      background: var(--surface);
+    }
+    @media (max-width: 1100px) {
+      .areas-grid-11 { grid-template-columns: repeat(3, 1fr); }
+      .area-card-destaque { grid-column: span 1; }
+    }
+    @media (max-width: 700px) {
+      .areas-grid-11 { grid-template-columns: 1fr 1fr; }
+      .area-card-destaque { grid-column: span 2; }
+    }
+    @media (max-width: 480px) {
+      .areas-grid-11 { grid-template-columns: 1fr; }
+      .area-card-destaque { grid-column: span 1; }
+    }
+    
     .area-card {
       background: var(--surface2); border: 1px solid rgba(201,169,97,0.12);
       border-radius: 6px; padding: 28px 24px;
@@ -316,7 +371,44 @@
       padding: 5px 12px; border-radius: 100px; letter-spacing: 0.05em;
     }
 
-    /* ── FAQ ── */
+    /* ── COLEGAS ADVOGADOS ── */
+    .colegas { background: var(--surface); }
+    .colegas-inner { text-align: center; }
+    .colegas-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,169,97,0.1); border: 1px solid rgba(201,169,97,0.25);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+    }
+    .colegas .section-desc { max-width: 680px; margin: 0 auto 36px; }
+    .colegas-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; margin-top: 32px; text-align: left;
+    }
+    .colegas-card {
+      background: var(--surface2); border: 1px solid rgba(201,169,97,0.12);
+      border-radius: 8px; padding: 24px; border-top: 3px solid var(--accent);
+    }
+    .colegas-card-icon {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: rgba(201,169,97,0.1); display: flex;
+      align-items: center; justify-content: center; margin-bottom: 14px;
+    }
+    .colegas-card h4 { font-size: 0.95rem; color: var(--white); margin-bottom: 8px; font-weight: 600; }
+    .colegas-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .colegas-destaque {
+      margin-top: 32px; background: rgba(201,169,97,0.07);
+      border: 1px solid rgba(201,169,97,0.2); border-radius: 8px;
+      padding: 20px 28px; max-width: 680px; margin-left: auto; margin-right: auto;
+    }
+    .colegas-destaque p { font-size: 0.9rem; color: var(--cream); line-height: 1.7; }
+    .colegas-destaque strong { color: var(--accent); }
+    @media (max-width: 900px) {
+      .colegas-grid { grid-template-columns: 1fr; }
+    }
+
+        /* ── FAQ ── */
     .faq { background: var(--surface2); }
     .faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; }
     .faq-item {
@@ -419,10 +511,11 @@
       .nav-hamburger { display: flex; }
       .nav-links.open {
         display: flex; flex-direction: column;
-        position: fixed; top: 70px; left: 0; right: 0;
+        position: fixed; top: 60px; left: 0; right: 0;
         background: rgba(12,26,46,0.98); backdrop-filter: blur(16px);
         padding: 24px; gap: 20px;
         border-bottom: 1px solid rgba(201,169,97,0.2);
+        z-index: 99;
       }
       .hero-inner { text-align: center; padding: 80px 24px 60px; }
       .hero-inner .hero-btns { justify-content: center; }
@@ -448,6 +541,17 @@
 </head>
 <body>
 
+  <!-- BANNER DE SEGURANÇA -->
+  <div class="security-banner" id="securityBanner">
+    <div class="security-inner">
+      <span class="security-icon">⚠️</span>
+      <p class="security-text">
+        <strong>Atenção:</strong> toda comunicação com nossos clientes é feita exclusivamente por grupo no WhatsApp. Não solicitamos pagamentos por mensagem privada nem por perfis que não sejam os oficiais do escritório. Proteja-se contra o golpe do falso advogado.
+      </p>
+      <button class="security-close" onclick="document.getElementById('securityBanner').style.display='none'" aria-label="Fechar">✕</button>
+    </div>
+  </div>
+
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
@@ -459,11 +563,12 @@
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#areas">Áreas</a></li>
         <li><a href="#como">Como Funciona</a></li>
+        <li><a href="#colegas">Para Advogados</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li>
           <a href="https://wa.me/5521998798777?text=Olá%20Dr.%20Vagner!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20caso."
              class="nav-cta" target="_blank" rel="noopener noreferrer">
-            Consulta Gratuita
+            Fale com o Dr. Vagner
           </a>
         </li>
       </ul>
@@ -491,7 +596,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          Consulta Gratuita
+          Fale com o Dr. Vagner
         </a>
         <a href="#sobre" class="btn-outline">
           Conhecer o Dr. Vagner
@@ -639,77 +744,84 @@
     <div class="container">
       <div class="section-tag reveal">Áreas de Atuação</div>
       <h2 class="section-title reveal">Especialidades que <em>resolvem</em></h2>
-      <p class="section-desc reveal">Atuação ampla para atender as mais diversas demandas — sempre com foco no resultado.</p>
-      <div class="areas-grid">
+      <p class="section-desc reveal">Atuação ampla e especializada para atender as mais diversas demandas jurídicas.</p>
+      <div class="areas-grid areas-grid-11">
         <div class="area-card reveal">
           <div class="area-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.97 1.61h9.72a2 2 0 001.97-1.61L23 6H6"/></svg>
           </div>
           <div class="area-name">Direito do Consumidor</div>
-          <p class="area-desc">Cobranças indevidas, produtos com defeito, negativação injusta e contratos abusivos.</p>
+          <p class="area-desc">Atuação em problemas com compras, cobranças indevidas, serviços mal prestados, negativação indevida e relações de consumo em geral.</p>
         </div>
         <div class="area-card reveal">
           <div class="area-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
           </div>
           <div class="area-name">Direito Trabalhista</div>
-          <p class="area-desc">Verbas rescisórias, horas extras, danos morais, readmissão e direitos do trabalhador.</p>
+          <p class="area-desc">Atuação em questões trabalhistas, verbas rescisórias, vínculo de emprego, horas extras, assédio e direitos do trabalhador.</p>
         </div>
         <div class="area-card reveal">
           <div class="area-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <div class="area-name">Direito Previdenciário</div>
-          <p class="area-desc">Aposentadoria, benefícios por incapacidade, pensão por morte e revisão de benefícios.</p>
+          <p class="area-desc">Atuação em aposentadorias, benefícios do INSS, revisões, auxílio-doença, BPC/LOAS e demandas previdenciárias em geral.</p>
         </div>
         <div class="area-card reveal">
           <div class="area-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <div class="area-name">Direito de Família</div>
-          <p class="area-desc">Divórcio, guarda, alimentos, inventário, adoção e regularização patrimonial familiar.</p>
+          <p class="area-desc">Atuação em divórcio, pensão alimentícia, guarda, regulamentação de visitas, inventário e demais questões familiares.</p>
         </div>
         <div class="area-card reveal">
           <div class="area-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
           </div>
-          <div class="area-name">Direito Cível</div>
-          <p class="area-desc">Cobranças, contratos, indenizações, responsabilidade civil e resolução de conflitos.</p>
+          <div class="area-name">Direito Civil</div>
+          <p class="area-desc">Atuação em obrigações, contratos, indenizações, responsabilidade civil, cobranças e conflitos civis em geral.</p>
         </div>
         <div class="area-card reveal">
           <div class="area-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <div class="area-name">Direito Criminal</div>
-          <p class="area-desc">Defesa criminal, incluindo atuação em Tribunal do Júri — com preparo técnico e estratégia robusta.</p>
+          <div class="area-name">Direito Criminal <span style="font-size:0.8em;font-weight:400;color:var(--muted)">(incl. Tribunal do Júri)</span></div>
+          <p class="area-desc">Atuação em defesa criminal, acompanhamento de inquéritos, processos penais e casos submetidos ao Tribunal do Júri.</p>
         </div>
         <div class="area-card reveal">
           <div class="area-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <div class="area-name">Plano de Saúde</div>
-          <p class="area-desc">Negativas de cobertura, reajustes abusivos, exclusão indevida e cumprimento de contratos.</p>
+          <p class="area-desc">Atuação em negativa de cobertura, reajustes abusivos, fornecimento de tratamentos, medicamentos e procedimentos médicos.</p>
         </div>
         <div class="area-card reveal">
           <div class="area-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
           </div>
           <div class="area-name">Direito Imobiliário</div>
-          <p class="area-desc">Compra e venda, locação, usucapião, regularização de imóveis e contratos imobiliários.</p>
+          <p class="area-desc">Atuação em contratos imobiliários, locação, compra e venda, posse, usucapião e conflitos relacionados a imóveis.</p>
         </div>
         <div class="area-card reveal">
           <div class="area-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
           <div class="area-name">Direito de Trânsito</div>
-          <p class="area-desc">Suspensão de CNH, multas, crimes de trânsito e recursos administrativos.</p>
+          <p class="area-desc">Atuação em multas, suspensão e cassação da CNH, recursos administrativos e outras demandas ligadas ao trânsito.</p>
         </div>
-      </div>
-      <div class="areas-extra reveal">
-        <div class="areas-extra-label">Direito Administrativo</div>
-        <div class="areas-extra-text">
-          Concursos públicos · Servidores públicos · Licitações e contratos · Responsabilidade do Estado · Poder de polícia ·
-          <strong style="color:var(--cream)">Cálculos judiciais e pareceres técnicos</strong> (disponível também para colegas advogados).
+        <div class="area-card reveal">
+          <div class="area-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          </div>
+          <div class="area-name">Direito Administrativo</div>
+          <p class="area-desc">Atuação em concursos públicos, servidores públicos, licitações e contratos, responsabilidade do Estado e poder de polícia.</p>
+        </div>
+        <div class="area-card reveal area-card-destaque">
+          <div class="area-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div class="area-name">Cálculos Judiciais e Pareceres Técnicos</div>
+          <p class="area-desc">Atuação com liquidação de sentença, atualização de débitos, juros, correção monetária e pareceres técnicos para suporte jurídico.</p>
         </div>
       </div>
     </div>
@@ -775,7 +887,7 @@
       </div>
       <div class="digital-cta reveal">
         <div class="digital-cta-text">
-          <h3>Pronto para uma consulta gratuita?</h3>
+          <h3>Pronto para uma análise do seu caso?</h3>
           <p>Atendimento para todo o Brasil · 100% digital · Sem deslocamento</p>
         </div>
         <a href="https://wa.me/5521998798777?text=Olá%20Dr.%20Vagner!%20Gostaria%20de%20saber%20mais."
@@ -783,6 +895,59 @@
           <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Falar com Dr. Vagner
         </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVIÇO PARA COLEGAS ADVOGADOS -->
+  <section class="colegas" id="colegas">
+    <div class="container">
+      <div class="colegas-inner reveal">
+        <div class="colegas-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" width="18" height="18">
+            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+          Advocacia para Advogados
+        </div>
+        <h2 class="section-title">Serviço para <em>Colegas Advogados</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Oferecemos cálculos judiciais e pareceres técnico-financeiros para advogados de todo o Brasil que precisam de suporte técnico na fase de cumprimento e execução de sentença.
+        </p>
+        <div class="colegas-grid">
+          <div class="colegas-card">
+            <div class="colegas-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" width="20" height="20"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M9 4v5M15 4v5"/></svg>
+            </div>
+            <h4>Liquidação de Sentença</h4>
+            <p>Cálculos precisos para cumprimento e execução de sentença com respaldo técnico e legal.</p>
+          </div>
+          <div class="colegas-card">
+            <div class="colegas-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" width="20" height="20"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <h4>Atualização de Débitos</h4>
+            <p>Cálculos de juros e correção monetária com metodologia adequada ao caso concreto.</p>
+          </div>
+          <div class="colegas-card">
+            <div class="colegas-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" width="20" height="20"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+            </div>
+            <h4>Pareceres Técnicos</h4>
+            <p>Pareceres fundamentados para impugnar cálculos da parte contrária com base contábil e jurídica.</p>
+          </div>
+        </div>
+        <div class="colegas-destaque">
+          <p>A combinação de formação em <strong>Contabilidade</strong> e experiência jurídica garante números com respaldo técnico e legal.</p>
+        </div>
+        <div style="text-align:center; margin-top: 32px;">
+          <a href="https://wa.me/5521998798777?text=Olá%20Dr.%20Vagner!%20Sou%20advogado(a)%20e%20gostaria%20de%20solicitar%20um%20orçamento%20para%20cálculos%20judiciais."
+             class="btn-primary" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Solicite um orçamento pelo WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -800,7 +965,7 @@
               <span class="faq-arrow">▾</span>
             </button>
             <div class="faq-a">
-              <p>Essa é a primeira coisa que avaliamos na consulta gratuita. Com o uso de jurimetria — análise estatística de decisões judiciais — conseguimos estimar com base real as chances de êxito antes de qualquer compromisso.</p>
+              <p>Essa é a primeira coisa que avaliamos na análise do seu caso. Com o uso de jurimetria — análise estatística de decisões judiciais — conseguimos estimar com base real as chances de êxito antes de qualquer compromisso.</p>
             </div>
           </div>
           <div class="faq-item reveal">
@@ -849,12 +1014,12 @@
     <div class="cta-inner">
       <div class="section-tag reveal" style="justify-content:center; display:flex;">Pronto para resolver?</div>
       <h2 class="section-title reveal">Fale agora com o <em>Dr. Vagner</em></h2>
-      <p class="cta-desc reveal">Consulta inicial gratuita. Sem compromisso. Atendimento para todo o Brasil, com a precisão técnica que o seu caso merece.</p>
+      <p class="cta-desc reveal">Atendimento inicial. Sem compromisso. Atendimento para todo o Brasil, com a precisão técnica que o seu caso merece.</p>
       <div class="cta-btns reveal">
         <a href="https://wa.me/5521998798777?text=Olá%20Dr.%20Vagner!%20Vim%20pelo%20site%20e%20gostaria%20de%20uma%20consulta%20gratuita%20sobre%20meu%20caso."
            class="btn-primary" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Consulta Gratuita no WhatsApp
+          Fale com o Dr. Vagner
         </a>
 
       </div>
@@ -969,9 +1134,17 @@
 
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("navLinks");
+    const navbarEl = document.getElementById("navbar");
+    function updateMenuTop() {
+      if (navLinks.classList.contains("open")) {
+        navLinks.style.top = navbarEl.getBoundingClientRect().bottom + "px";
+      }
+    }
     hamburger.addEventListener("click", function() {
       navLinks.classList.toggle("open");
+      updateMenuTop();
     });
+    window.addEventListener("scroll", updateMenuTop, { passive: true });
     navLinks.querySelectorAll("a").forEach(function(link) {
       link.addEventListener("click", function() { navLinks.classList.remove("open"); });
     });
