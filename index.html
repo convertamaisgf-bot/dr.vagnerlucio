@@ -77,8 +77,8 @@
       transition: padding 0.3s;
     }
     nav.scrolled { padding: 14px 0; }
-    .nav-inner { overflow: hidden;
-      display: flex; align-items: center; justify-content: space-between;
+    .nav-inner { overflow: visible;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
       max-width: 1100px; margin: 0 auto; padding: 0 24px;
     }
     .nav-logo {
@@ -90,7 +90,7 @@
       font-size: 0.65rem; font-weight: 400; color: var(--muted);
       letter-spacing: 0.1em; text-transform: uppercase;
     }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a {
       color: var(--cream); text-decoration: none; font-size: 0.8rem;
       font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
@@ -101,6 +101,7 @@
       background: var(--accent) !important; color: var(--text-dark) !important;
       padding: 10px 20px; border-radius: 4px; font-weight: 700 !important;
       opacity: 1 !important; transition: background 0.2s !important;
+      white-space: nowrap;
     }
     .nav-cta:hover { background: var(--accent2) !important; }
     .nav-hamburger {
@@ -515,18 +516,32 @@
     .footer-creditos a { color: var(--accent); text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
     .footer-creditos a:hover { opacity: 0.75; }
 
+    @media (min-width: 901px) and (max-width: 1100px) {
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 0.73rem; letter-spacing: 0.04em; }
+      .nav-cta { padding: 10px 14px; white-space: nowrap; }
+      .nav-logo { font-size: 0.98rem; }
+      .nav-logo span { font-size: 0.58rem; letter-spacing: 0.08em; }
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 900px) {
       .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
+      .nav-hamburger { display: flex; flex-shrink: 0; }
+      .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+      .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
       .nav-links.open {
-        display: flex; flex-direction: column;
-        position: fixed; top: 60px; left: 0; right: 0;
+        display: flex; flex-direction: column; align-items: flex-start;
+        position: absolute; top: 100%; left: 0; right: 0; width: 100%;
         background: rgba(12,26,46,0.98); backdrop-filter: blur(16px);
         padding: 24px; gap: 20px;
         border-bottom: 1px solid rgba(201,169,97,0.2);
-        z-index: 99;
+        z-index: 110;
+        max-height: calc(100vh - 64px); overflow-y: auto;
       }
+      .nav-links.open a { display: block; }
+      .nav-links.open .nav-cta { display: inline-block; max-width: 100%; text-align: center; white-space: nowrap; }
       .hero-inner { text-align: center; padding: 80px 24px 60px; }
       .hero-inner .hero-btns { justify-content: center; }
       .hero-badge, .oab-badge { margin-left: auto; margin-right: auto; }
@@ -567,7 +582,7 @@
       <p class="security-text">
         <strong>Atenção:</strong> toda comunicação com nossos clientes é feita exclusivamente por grupo no WhatsApp. Não solicitamos pagamentos por mensagem privada nem por perfis que não sejam os oficiais do escritório. Proteja-se contra o golpe do falso advogado.
       </p>
-      <button class="security-close" onclick="document.getElementById('securityBanner').style.display='none'" aria-label="Fechar">✕</button>
+      <button class="security-close" id="securityClose" aria-label="Fechar">✕</button>
     </div>
   </div>
 
@@ -593,7 +608,7 @@
           </a>
         </li>
       </ul>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1121,7 +1136,7 @@
           Dr. Vagner Lúcio de Lima
           <span>Advocacia e Consultoria Especializada</span>
         </div>
-        <p>Advocacia e Consultoria Especializada. Atendimento 100% digital para todo o Brasil.</p>
+        <p>Atendimento 100% digital para todo o Brasil.</p>
       </div>
       <div class="footer-links">
         <h4>Áreas</h4>
@@ -1185,19 +1200,32 @@
 
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("navLinks");
-    const navbarEl = document.getElementById("navbar");
-    function updateMenuTop() {
-      if (navLinks.classList.contains("open")) {
-        navLinks.style.top = navbarEl.getBoundingClientRect().bottom + "px";
-      }
+    const securityBanner = document.getElementById("securityBanner");
+    const securityClose = document.getElementById("securityClose");
+
+    function setMenuOpen(isOpen) {
+      navLinks.classList.toggle("open", isOpen);
+      hamburger.classList.toggle("open", isOpen);
+      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
     }
+
     hamburger.addEventListener("click", function() {
-      navLinks.classList.toggle("open");
-      updateMenuTop();
+      setMenuOpen(!navLinks.classList.contains("open"));
     });
-    window.addEventListener("scroll", updateMenuTop, { passive: true });
+
     navLinks.querySelectorAll("a").forEach(function(link) {
-      link.addEventListener("click", function() { navLinks.classList.remove("open"); });
+      link.addEventListener("click", function() { setMenuOpen(false); });
+    });
+
+    if (securityClose) {
+      securityClose.addEventListener("click", function() {
+        securityBanner.style.display = "none";
+        setMenuOpen(false);
+      });
+    }
+
+    window.addEventListener("resize", function() {
+      if (window.innerWidth > 900) setMenuOpen(false);
     });
 
     const observer = new IntersectionObserver(function(entries) {
