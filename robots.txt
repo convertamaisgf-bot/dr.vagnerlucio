@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.vagnerdelima.adv.br/sitemap.xml
